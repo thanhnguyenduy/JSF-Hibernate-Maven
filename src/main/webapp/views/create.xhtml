@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>User Registration Form</title>
+	<h:outputStylesheet name="/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+	<h:form id="form" class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2 style="text-align: center">Provide Following Details</h2>
+			</div>
+		</div>
+		<hr />
+		<div class="form-group">
+			<h:outputLabel for="carname" class="control-label col-sm-4">Car Name</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="name-id" value="#{car.cname}" class="form-control"
+					validatorMessage="Car name is required">
+					<f:validateRequired />
+				</h:inputText>
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="color" class="control-label col-sm-4">Car color</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="color-id" value="#{car.color}"
+					class="form-control" validatorMessage="Color Id is required">
+					<f:validateRequired />
+				</h:inputText>
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="speed" class="control-label col-sm-4">Car speed</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="speed-id" value="#{car.speed}"
+					class="form-control" validatorMessage="speed is required">
+					<f:validateRequired />
+				</h:inputText>
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="mfdctry" class="control-label col-sm-4">Manufactured Country</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="mfdctry-id" value="#{car.mfdctry}"
+					class="form-control" validatorMessage="Country is required">
+					<f:validateRequired />
+				</h:inputText>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+					<h:commandButton value="Save" action="#{car.saveCar()}"
+						class="btn btn-success" style="width: 80px;"></h:commandButton>
+				</div>
+				<div class="col-sm-1"></div>
+				<div class="col-sm-2">
+					<h:link outcome="index" value="View Cars Record List"
+						class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>
